@@ -8,7 +8,9 @@
       name="description"
       content="每尾約 300g，一餐剛剛好。適合乾煎、清蒸、煮湯的台灣家常魚預購頁。"
     />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="product.js" defer></script>
   </head>
   <body>
     <header class="topbar">
@@ -70,29 +72,33 @@
           <h2>選一種最適合你家的份量</h2>
         </div>
         <div class="pack-grid">
-          <article class="pack-card">
+          <article class="pack-card" data-pack="3 尾體驗包">
             <span>首購試吃</span>
             <h3>3 尾體驗包</h3>
             <p>約 900g，先試乾煎和魚湯口感。</p>
             <strong>售價待確認</strong>
+            <a href="#order">選這組</a>
           </article>
-          <article class="pack-card featured">
+          <article class="pack-card featured" data-pack="6 尾家庭包">
             <span>主力推薦</span>
             <h3>6 尾家庭包</h3>
             <p>約 1.8kg，小家庭一週晚餐常備。</p>
             <strong>售價待確認</strong>
+            <a href="#order">選這組</a>
           </article>
-          <article class="pack-card">
+          <article class="pack-card" data-pack="10 尾常備包">
             <span>補冰箱</span>
             <h3>10 尾常備包</h3>
             <p>約 3kg，平日晚餐不用每天想。</p>
             <strong>售價待確認</strong>
+            <a href="#order">選這組</a>
           </article>
-          <article class="pack-card">
+          <article class="pack-card" data-pack="20 尾團購箱">
             <span>一起買</span>
             <h3>20 尾團購箱</h3>
             <p>約 6kg，適合社區、公司、親友團。</p>
             <strong>售價待確認</strong>
+            <a href="#order">選這組</a>
           </article>
         </div>
       </section>
@@ -144,6 +150,27 @@
         </div>
       </section>
 
+      <section class="section proof-section">
+        <div class="section-heading">
+          <p class="eyebrow">Trust</p>
+          <h2>買魚最怕不清楚，所以每一步都先講明白</h2>
+        </div>
+        <div class="proof-grid">
+          <article>
+            <strong>規格透明</strong>
+            <p>每尾約 300g，實際重量與正式品名以包裝標示和客服確認為準。</p>
+          </article>
+          <article>
+            <strong>料理簡單</strong>
+            <p>乾煎、清蒸、煮湯都能上桌，不需要複雜備料。</p>
+          </article>
+          <article>
+            <strong>配送保守</strong>
+            <p>先小量預購，避開連假、颱風和無法準時收貨的低溫風險。</p>
+          </article>
+        </div>
+      </section>
+
       <section id="order" class="order-section">
         <div>
           <p class="eyebrow">Preorder</p>
@@ -153,9 +180,57 @@
             再成立正式訂單。
           </p>
         </div>
-        <div class="order-actions">
-          <a class="button primary" href="mailto:hello@example.com?subject=一尾一餐家常魚預購&body=我想預購：%0A收件縣市：%0A可收貨時間：">Email 預購</a>
-          <a class="button secondary" href="/output/fish_d2c_launch/group_buy_pack.md">團購資料包</a>
+        <form class="preorder-form" id="preorderForm">
+          <label>
+            <span>想預購的包裝</span>
+            <select id="packSelect" name="pack">
+              <option>6 尾家庭包</option>
+              <option>3 尾體驗包</option>
+              <option>10 尾常備包</option>
+              <option>20 尾團購箱</option>
+            </select>
+          </label>
+          <label>
+            <span>收件縣市</span>
+            <input id="cityInput" name="city" placeholder="例：台北市" />
+          </label>
+          <label>
+            <span>可收貨時間</span>
+            <input id="timeInput" name="time" placeholder="例：週三下午、週六上午" />
+          </label>
+          <label>
+            <span>備註</span>
+            <textarea id="noteInput" name="note" rows="3" placeholder="例：想先試煎魚、想開社區團購"></textarea>
+          </label>
+          <div class="order-actions">
+            <a class="button primary" id="emailOrder" href="mailto:hello@example.com?subject=一尾一餐家常魚預購">產生預購 Email</a>
+            <a class="button secondary" href="/output/fish_d2c_launch/group_buy_pack.md">團購資料包</a>
+          </div>
+        </form>
+      </section>
+
+      <section class="section faq-section">
+        <div class="section-heading">
+          <p class="eyebrow">FAQ</p>
+          <h2>下單前常見問題</h2>
+        </div>
+        <div class="faq-list">
+          <details open>
+            <summary>一尾大概多大？</summary>
+            <p>目前以每尾約 300g 規劃，實際重量會有自然誤差，正式出貨以商品標示為準。</p>
+          </details>
+          <details>
+            <summary>收到後怎麼保存？</summary>
+            <p>收到後請立即依包裝標示低溫保存。退冰後不建議再次冷凍。</p>
+          </details>
+          <details>
+            <summary>可以指定到貨日嗎？</summary>
+            <p>可以先填寫希望收貨時間，客服會依固定出貨日和低溫配送狀況確認。</p>
+          </details>
+          <details>
+            <summary>魚種、產地和價格在哪裡看？</summary>
+            <p>正式開賣前會由客服確認魚種、產地、保存型態、售價與出貨日，不會在未確認前承諾。</p>
+          </details>
         </div>
       </section>
 
@@ -166,5 +241,6 @@
         <a href="/output/fish_d2c_launch/AUTOMATION_CONTROL_CENTER.md">後台紀錄</a>
       </section>
     </main>
+    <a class="sticky-order" href="#order">預購</a>
   </body>
 </html>

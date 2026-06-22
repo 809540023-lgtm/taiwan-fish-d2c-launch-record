@@ -244,6 +244,8 @@ h3 {
 }
 
 .pack-card {
+  display: flex;
+  flex-direction: column;
   min-height: 220px;
   padding: 22px;
   border: 1px solid var(--line);
@@ -270,7 +272,16 @@ h3 {
 }
 
 .pack-card strong {
+  margin-top: auto;
   color: var(--leaf);
+}
+
+.pack-card a {
+  display: inline-flex;
+  align-self: flex-start;
+  margin-top: 18px;
+  color: var(--leaf);
+  font-weight: 800;
 }
 
 .cook-section {
@@ -337,9 +348,39 @@ figcaption span {
   line-height: 1.7;
 }
 
+.proof-section {
+  background: #fffdf8;
+}
+
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.proof-grid article {
+  min-height: 180px;
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+}
+
+.proof-grid strong {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--leaf);
+  font-size: 20px;
+}
+
+.proof-grid p {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
 .order-section {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 520px);
   gap: 28px;
   align-items: center;
   padding: 64px clamp(20px, 5vw, 72px);
@@ -350,6 +391,79 @@ figcaption span {
 .order-section p {
   max-width: 720px;
   color: rgba(255, 255, 255, 0.78);
+}
+
+.preorder-form {
+  display: grid;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.preorder-form label,
+.preorder-form span {
+  display: block;
+}
+
+.preorder-form span {
+  margin-bottom: 7px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.preorder-form input,
+.preorder-form select,
+.preorder-form textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+}
+
+.preorder-form input,
+.preorder-form select {
+  height: 44px;
+  padding: 0 12px;
+}
+
+.preorder-form textarea {
+  padding: 12px;
+  resize: vertical;
+}
+
+.faq-section {
+  background: #e9f0ed;
+}
+
+.faq-list {
+  display: grid;
+  gap: 10px;
+  max-width: 920px;
+}
+
+details {
+  border: 1px solid rgba(15, 98, 77, 0.18);
+  border-radius: 8px;
+  background: #fff;
+}
+
+summary {
+  cursor: pointer;
+  padding: 18px 20px;
+  color: var(--soy);
+  font-weight: 900;
+}
+
+details p {
+  margin: 0;
+  padding: 0 20px 18px;
+  color: var(--muted);
+  line-height: 1.7;
 }
 
 .fine-print {
@@ -371,6 +485,23 @@ figcaption span {
   font-weight: 800;
 }
 
+.sticky-order {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 30;
+  display: none;
+  min-width: 76px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: var(--broth);
+  color: #211810;
+  text-align: center;
+  text-decoration: none;
+  font-weight: 900;
+  box-shadow: 0 14px 34px rgba(33, 24, 16, 0.2);
+}
+
 @media (max-width: 900px) {
   .topbar {
     position: static;
@@ -390,6 +521,7 @@ figcaption span {
   .pack-grid,
   .cook-layout,
   .delivery-steps,
+  .proof-grid,
   .order-section {
     grid-template-columns: 1fr;
   }
@@ -401,5 +533,11 @@ figcaption span {
 
   .fine-print {
     flex-direction: column;
+  }
+
+  .sticky-order {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 }
