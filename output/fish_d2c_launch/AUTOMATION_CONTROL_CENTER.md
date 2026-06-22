@@ -6,6 +6,14 @@ Codex automation id：`d2c`
 名稱：台灣魚貨D2C每日自動行銷作戰包  
 頻率：每日早上自動執行  
 
+## GitHub / Render 部署紀錄
+
+- GitHub repo：https://github.com/809540023-lgtm/taiwan-fish-d2c-launch-record
+- Render service：https://dashboard.render.com/static/srv-d8so5b3sq97s73e2s5qg
+- Render public URL：https://taiwan-fish-d2c-launch-record.onrender.com
+- Render deploy：https://dashboard.render.com/static/srv-d8so5b3sq97s73e2s5qg/deploys/dep-d8so5bbsq97s73e2s620
+- 初次部署 commit：`5a1cbb770ee5c415c7e82b65fd8cf4b7a05657ad`
+
 ## 每日自動執行內容
 
 Codex 每天會在 workspace：
@@ -67,4 +75,3 @@ python3 output/fish_d2c_launch/scripts/generate_daily_pack.py
 3. Meta Business Suite：自動建立草稿貼文，發布前人工確認。
 4. n8n/Make：串接每日資料流與通知。
 5. 電商平台：自動比對庫存與訂單，但改價和上架仍需人工審批。
-
