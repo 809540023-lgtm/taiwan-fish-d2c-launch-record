@@ -8,6 +8,19 @@
       name="description"
       content="每尾約 300g，一餐剛剛好。適合乾煎、清蒸、煮湯的台灣家常魚預購頁。"
     />
+    <meta name="theme-color" content="#0f624d" />
+    <link rel="canonical" href="https://taiwan-fish-d2c-launch-record.onrender.com/web/" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="一尾一餐家常魚｜台灣魚貨預購" />
+    <meta
+      property="og:description"
+      content="首波 1000kg 批次預購。每尾約 300g，乾煎、清蒸、煮湯都能上桌。"
+    />
+    <meta
+      property="og:image"
+      content="https://taiwan-fish-d2c-launch-record.onrender.com/output/fish_d2c_launch/assets/fried-fish.jpg"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script src="product.js" defer></script>
@@ -66,34 +79,69 @@
         </div>
       </section>
 
+      <section class="section batch-section" aria-labelledby="batch-title">
+        <div class="section-heading">
+          <p class="eyebrow">Batch</p>
+          <h2 id="batch-title">首波 1000kg 批次，先收需求再排出貨</h2>
+          <p>
+            以每尾約 300g 估算，首波約可分配 3,333 尾。正式可售數量會依魚貨檢驗、
+            分級、包裝與低溫配送條件確認，不用超接單硬出貨。
+          </p>
+        </div>
+        <div class="batch-dashboard">
+          <div class="batch-metrics">
+            <article>
+              <span>批次總量</span>
+              <strong>1000kg</strong>
+            </article>
+            <article>
+              <span>單尾規格</span>
+              <strong>約 300g</strong>
+            </article>
+            <article>
+              <span>銷售狀態</span>
+              <strong>預購登記中</strong>
+            </article>
+          </div>
+          <div class="batch-meter" aria-label="首波批次流程">
+            <div class="meter-track"><span></span></div>
+            <div class="meter-labels">
+              <span>開放登記</span>
+              <span>客服確認</span>
+              <span>低溫出貨</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="packs" class="section">
         <div class="section-heading">
           <p class="eyebrow">Packs</p>
           <h2>選一種最適合你家的份量</h2>
         </div>
         <div class="pack-grid">
-          <article class="pack-card" data-pack="3 尾體驗包">
+          <article class="pack-card" data-pack="3 尾體驗包" data-weight="約 900g" data-hint="先試乾煎和魚湯口感，適合首購試吃。">
             <span>首購試吃</span>
             <h3>3 尾體驗包</h3>
             <p>約 900g，先試乾煎和魚湯口感。</p>
             <strong>售價待確認</strong>
             <a href="#order">選這組</a>
           </article>
-          <article class="pack-card featured" data-pack="6 尾家庭包">
+          <article class="pack-card featured" data-pack="6 尾家庭包" data-weight="約 1.8kg" data-hint="小家庭一週晚餐常備，是主力推薦組合。">
             <span>主力推薦</span>
             <h3>6 尾家庭包</h3>
             <p>約 1.8kg，小家庭一週晚餐常備。</p>
             <strong>售價待確認</strong>
             <a href="#order">選這組</a>
           </article>
-          <article class="pack-card" data-pack="10 尾常備包">
+          <article class="pack-card" data-pack="10 尾常備包" data-weight="約 3kg" data-hint="適合固定煮飯家庭，一次把平日晚餐補進冰箱。">
             <span>補冰箱</span>
             <h3>10 尾常備包</h3>
             <p>約 3kg，平日晚餐不用每天想。</p>
             <strong>售價待確認</strong>
             <a href="#order">選這組</a>
           </article>
-          <article class="pack-card" data-pack="20 尾團購箱">
+          <article class="pack-card" data-pack="20 尾團購箱" data-weight="約 6kg" data-hint="適合社區、公司、親友團，客服會協助確認分箱與配送。">
             <span>一起買</span>
             <h3>20 尾團購箱</h3>
             <p>約 6kg，適合社區、公司、親友團。</p>
@@ -190,6 +238,17 @@
               <option>20 尾團購箱</option>
             </select>
           </label>
+          <div class="order-summary" aria-live="polite">
+            <div>
+              <span>目前選擇</span>
+              <strong id="summaryPack">6 尾家庭包</strong>
+            </div>
+            <div>
+              <span>預估重量</span>
+              <strong id="summaryWeight">約 1.8kg</strong>
+            </div>
+            <p id="summaryHint">小家庭一週晚餐常備，是主力推薦組合。</p>
+          </div>
           <label>
             <span>收件縣市</span>
             <input id="cityInput" name="city" placeholder="例：台北市" />
@@ -202,10 +261,16 @@
             <span>備註</span>
             <textarea id="noteInput" name="note" rows="3" placeholder="例：想先試煎魚、想開社區團購"></textarea>
           </label>
+          <label>
+            <span>可貼給客服的預購訊息</span>
+            <textarea id="messagePreview" rows="7" readonly></textarea>
+          </label>
           <div class="order-actions">
-            <a class="button primary" id="emailOrder" href="mailto:hello@example.com?subject=一尾一餐家常魚預購">產生預購 Email</a>
+            <button class="button primary" id="copyOrder" type="button">複製預購訊息</button>
+            <a class="button secondary" id="emailOrder" href="mailto:hello@example.com?subject=一尾一餐家常魚預購">產生 Email 草稿</a>
             <a class="button secondary" href="/output/fish_d2c_launch/group_buy_pack.md">團購資料包</a>
           </div>
+          <p class="copy-status" id="copyStatus" role="status" aria-live="polite"></p>
         </form>
       </section>
 
