@@ -1,0 +1,82 @@
+{
+  "brand_name": "台灣家常魚",
+  "timezone": "Asia/Taipei",
+  "product": {
+    "name": "一尾一餐家常魚",
+    "species": "待確認魚種",
+    "origin": "待確認產地",
+    "total_inventory_kg": 1000,
+    "unit_weight_g": 300,
+    "storage_type": "待確認：冷凍/冷藏",
+    "shipping_type": "低溫宅配",
+    "required_before_publish": [
+      "魚種",
+      "產地",
+      "保存型態",
+      "有效日期",
+      "加工/分裝資訊",
+      "食品業者登錄",
+      "售價",
+      "出貨日"
+    ]
+  },
+  "skus": [
+    {
+      "name": "體驗包",
+      "units": 3,
+      "weight_kg": 0.9,
+      "price": null,
+      "role": "首購試吃"
+    },
+    {
+      "name": "家庭包",
+      "units": 6,
+      "weight_kg": 1.8,
+      "price": null,
+      "role": "主力家庭常備"
+    },
+    {
+      "name": "常備包",
+      "units": 10,
+      "weight_kg": 3.0,
+      "price": null,
+      "role": "補冰箱"
+    },
+    {
+      "name": "團購箱",
+      "units": 20,
+      "weight_kg": 6.0,
+      "price": null,
+      "role": "社區/公司團購"
+    }
+  ],
+  "channels": [
+    "Facebook",
+    "Instagram",
+    "LINE OA",
+    "TikTok/Reels",
+    "團購主/社群",
+    "蝦皮/官網"
+  ],
+  "approval_policy": {
+    "auto_generate": [
+      "每日內容草稿",
+      "LINE 草稿",
+      "團購主訊息草稿",
+      "客服回覆草稿",
+      "待辦清單",
+      "成效分析模板"
+    ],
+    "human_required": [
+      "發文",
+      "LINE 群發",
+      "私訊送出",
+      "廣告投放",
+      "改價",
+      "庫存承諾",
+      "出貨承諾",
+      "食品/產地/檢驗宣稱"
+    ]
+  }
+}
+

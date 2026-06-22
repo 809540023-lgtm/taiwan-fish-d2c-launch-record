@@ -1,0 +1,6 @@
+services:
+  - type: web
+    runtime: static
+    name: taiwan-fish-d2c-launch-record
+    buildCommand: ""
+    staticPublishPath: .
